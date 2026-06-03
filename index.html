@@ -4,714 +4,681 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Real 1:1 — Prepare for Your Meeting</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --slate: #627986;
-    --red: #9f4140;
-    --red-light: #f9eaea;
-    --dark: #1a1f22;
-    --mid: #3d4a52;
-    --muted: #8a9aa3;
-    --border: #dce4e8;
-    --bg: #f7f5f2;
-    --white: #ffffff;
-    --success: #2d6a4f;
-  }
+:root {
+  --red: #9f4140;
+  --red-hover: #7e3130;
+  --slate: #2e3c44;
+  --slate-mid: #3d4e57;
+  --muted: #8a9aa3;
+  --border: #ddd9d3;
+  --bg: #eeeae4;
+  --card-bg: #ffffff;
+  --text: #1e2b30;
+  --text-mid: #4a5c65;
+  --label: #9f4140;
+  --success: #2d6a4f;
+  --success-bg: #eaf4ee;
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--dark);
-    min-height: 100vh;
-  }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-  /* HEADER */
-  .site-header {
-    background: var(--dark);
-    padding: 1.25rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--white);
-    letter-spacing: 0.01em;
-  }
-  .logo span { color: #c97b7a; font-style: italic; }
-  .powered-by {
-    font-size: 0.72rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
+/* ── HEADER ── */
+.site-header {
+  background: var(--slate);
+  padding: 1.1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.header-text {}
+.header-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+}
+.header-sub {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
 
-  /* HERO */
-  .hero {
-    background: var(--dark);
-    padding: 3rem 2rem 3.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; left: 50%;
-    transform: translateX(-50%);
-    width: 600px; height: 300px;
-    background: radial-gradient(ellipse, rgba(159,65,64,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #c97b7a;
-    margin-bottom: 1rem;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-  .hero h1 em { font-style: italic; color: #c97b7a; }
-  .hero p {
-    font-size: 1rem;
-    color: #a0b4bd;
-    max-width: 520px;
-    margin: 0 auto;
-    line-height: 1.7;
-    font-weight: 300;
-  }
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+.hero h1 .red-italic {
+  display: block;
+  font-style: italic;
+  color: var(--red);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+}
 
-  /* PROGRESS BAR */
-  .progress-wrap {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .progress-inner {
-    max-width: 680px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .progress-bar {
-    flex: 1;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--red);
-    border-radius: 2px;
-    transition: width 0.5s ease;
-  }
-  .progress-label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    white-space: nowrap;
-    min-width: 80px;
-    text-align: right;
-  }
+/* ── EXAMPLE CARD ── */
+.example-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 2.25rem;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+.example-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.75rem;
+}
+.example-category {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+.example-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.example-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
 
-  /* MAIN */
-  .main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
-  }
+/* ── SECTION DIVIDER ── */
+.section-center {
+  text-align: center;
+  padding: 2rem 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
 
-  /* SETUP CARD */
-  .setup-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    animation: fadeUp 0.4s ease both;
-  }
-  .setup-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--dark);
-    margin-bottom: 0.4rem;
-  }
-  .setup-card p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .field { display: flex; flex-direction: column; gap: 0.4rem; }
-  label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--mid);
-    letter-spacing: 0.03em;
-  }
-  input[type="text"], input[type="email"] {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    background: var(--bg);
-    transition: border-color 0.2s, background 0.2s;
-    outline: none;
-  }
-  input:focus { border-color: var(--slate); background: var(--white); }
-  input.error { border-color: var(--red); }
+/* ── MAIN FORM WRAPPER ── */
+.form-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
 
-  /* QUESTION CARDS */
-  .question-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 1.25rem;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.2s;
-    pointer-events: none;
-  }
-  .question-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-  .question-card.active { border-color: var(--slate); box-shadow: 0 0 0 3px rgba(98,121,134,0.08); }
-  .question-card.completed { border-color: #b7dbc9; background: #f7fdf9; }
-  .q-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
-  .q-number {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 1.5px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--muted);
-    flex-shrink: 0;
-    transition: background 0.3s, border-color 0.3s, color 0.3s;
-  }
-  .question-card.active .q-number { background: var(--slate); border-color: var(--slate); color: var(--white); }
-  .question-card.completed .q-number { background: var(--success); border-color: var(--success); color: var(--white); }
-  .q-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--dark);
-    line-height: 1.5;
-    padding-top: 4px;
-  }
-  .q-hint {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    padding-left: 2.75rem;
-  }
-  textarea {
-    width: 100%;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.875rem 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    background: var(--bg);
-    resize: vertical;
-    min-height: 100px;
-    line-height: 1.6;
-    transition: border-color 0.2s, background 0.2s;
-    outline: none;
-  }
-  textarea:focus { border-color: var(--slate); background: var(--white); }
-  textarea.error { border-color: var(--red); }
-  .char-count { font-size: 0.75rem; color: var(--muted); text-align: right; margin-top: 0.35rem; }
+/* ── PROGRESS ── */
+.progress-wrap {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+.progress-wrap.show { display: block; }
+.progress-inner { max-width: 640px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; }
+.progress-bar { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--red); border-radius: 2px; transition: width 0.5s ease; width: 0%; }
+.progress-label { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
 
-  /* SAVE & CONTINUE BUTTON */
-  .btn-next {
-    margin-top: 1rem;
-    background: none;
-    border: 1.5px solid var(--slate);
-    border-radius: 6px;
-    padding: 0.55rem 1.35rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--slate);
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    display: none;
-  }
-  .btn-next:hover { background: var(--slate); color: var(--white); }
+/* ── SETUP CARD ── */
+.setup-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.25rem;
+  display: none;
+}
+.setup-card.show { display: block; animation: fadeUp 0.35s ease; }
+.setup-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.setup-card .sub { font-size: 0.84rem; color: var(--muted); margin-bottom: 1.35rem; line-height: 1.55; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+label { font-size: 0.78rem; font-weight: 500; color: var(--text-mid); }
+input[type="text"], input[type="email"] {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.65rem 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+input:focus { border-color: var(--slate-mid); background: var(--card-bg); }
+input.err { border-color: var(--red); }
+.err-msg { font-size: 0.74rem; color: var(--red); display: none; }
+.err-msg.show { display: block; }
 
-  /* AI RESPONSE */
-  .ai-response {
-    background: linear-gradient(135deg, #f0f4f6 0%, #e8f0f3 100%);
-    border: 1px solid #ccdde5;
-    border-left: 3px solid var(--slate);
-    border-radius: 0 8px 8px 0;
-    padding: 1rem 1.25rem;
-    margin-top: 1rem;
-    font-size: 0.88rem;
-    color: var(--mid);
-    line-height: 1.7;
-    display: none;
-  }
-  .ai-response.visible { display: block; animation: fadeUp 0.3s ease; }
-  .ai-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.5rem; }
-  .ai-thinking { display: flex; gap: 4px; align-items: center; padding: 0.5rem 0; }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--slate); animation: pulse 1.2s ease-in-out infinite; }
-  .dot:nth-child(2) { animation-delay: 0.2s; }
-  .dot:nth-child(3) { animation-delay: 0.4s; }
+/* ── QUESTION CARDS ── */
+.q-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+.q-card.show { display: block; animation: fadeUp 0.35s ease both; }
+.q-card.done { border-color: #aed6bc; background: #f5fbf7; }
+.q-card.active { border-color: var(--slate-mid); }
 
-  .check-mark { display: none; font-size: 0.82rem; color: var(--success); margin-top: 0.75rem; padding-left: 2.75rem; }
-  .question-card.completed .check-mark { display: block; }
+.q-top { display: flex; align-items: flex-start; gap: 0.9rem; margin-bottom: 0.9rem; }
+.q-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 500; color: var(--muted);
+  flex-shrink: 0;
+  transition: all 0.25s;
+}
+.q-card.active .q-num { background: var(--slate-mid); border-color: var(--slate-mid); color: #fff; }
+.q-card.done .q-num { background: var(--success); border-color: var(--success); color: #fff; }
+.q-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  color: var(--text);
+  line-height: 1.45;
+  padding-top: 3px;
+}
+.q-hint { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.9rem; padding-left: 3.1rem; line-height: 1.55; }
 
-  /* SUBMIT */
-  .submit-section { margin-top: 2rem; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
-  .submit-section.visible { opacity: 1; pointer-events: all; }
-  .submit-note {
-    background: var(--red-light);
-    border: 1px solid #f0c8c8;
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    font-size: 0.85rem;
-    color: #7a2e2e;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
-  .submit-note strong { font-weight: 500; }
-  .btn-submit {
-    width: 100%;
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 1rem 2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    letter-spacing: 0.01em;
-  }
-  .btn-submit:hover { background: #8a3534; }
-  .btn-submit:active { transform: scale(0.99); }
-  .btn-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.8rem 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  resize: vertical;
+  min-height: 95px;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+textarea:focus { border-color: var(--slate-mid); background: var(--card-bg); }
 
-  /* SUCCESS */
-  .success-screen { display: none; text-align: center; padding: 3rem 1.5rem; animation: fadeUp 0.5s ease; }
-  .success-screen.visible { display: block; }
-  .success-icon {
-    width: 64px; height: 64px;
-    background: #e8f5ee;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.75rem;
-    margin: 0 auto 1.5rem;
-  }
-  .success-screen h2 { font-family: 'Playfair Display', serif; font-size: 1.75rem; color: var(--dark); margin-bottom: 0.75rem; }
-  .success-screen p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; max-width: 420px; margin: 0 auto 2rem; }
-  .success-manager-name { font-family: 'Playfair Display', serif; font-style: italic; color: var(--slate); }
+.q-footer { margin-top: 0.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.char-ct { font-size: 0.73rem; color: var(--muted); }
 
-  /* FOOTER */
-  .site-footer {
-    text-align: center;
-    padding: 2rem 2rem 1.5rem;
-    font-size: 0.78rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--white);
-  }
-  .site-footer .footer-links { margin-bottom: 0.75rem; }
-  .site-footer a { color: var(--slate); text-decoration: none; margin: 0 0.5rem; }
-  .site-footer a:hover { text-decoration: underline; }
-  .site-footer .footer-disclaimer {
-    font-size: 0.72rem;
-    color: var(--muted);
-    max-width: 600px;
-    margin: 0.75rem auto 0;
-    line-height: 1.6;
-  }
-  .site-footer .footer-copy { margin-top: 0.6rem; font-size: 0.72rem; color: var(--muted); }
+.btn-next {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.35rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.btn-next.ready { opacity: 1; pointer-events: all; }
+.btn-next.ready:hover { background: var(--red-hover); }
 
-  /* ERROR */
-  .error-msg { font-size: 0.78rem; color: var(--red); margin-top: 0.3rem; display: none; }
-  .error-msg.visible { display: block; }
+.ai-box {
+  background: #f4f0eb;
+  border-left: 3px solid var(--red);
+  border-radius: 0 7px 7px 0;
+  padding: 0.85rem 1rem;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  display: none;
+}
+.ai-box.show { display: block; animation: fadeUp 0.3s ease; }
+.ai-tag { font-size: 0.67rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.4rem; }
+.dots { display: flex; gap: 4px; padding: 4px 0; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); animation: blink 1.2s infinite; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
-    40% { transform: scale(1); opacity: 1; }
-  }
+.saved-note { font-size: 0.78rem; color: var(--success); margin-top: 0.5rem; padding-left: 3.1rem; display: none; }
+.q-card.done .saved-note { display: block; }
 
-  @media (max-width: 520px) {
-    .field-row { grid-template-columns: 1fr; }
-    .hero { padding: 2rem 1.5rem 2.5rem; }
-  }
+/* ── SUBMIT ── */
+.submit-wrap { margin-top: 1.5rem; display: none; animation: fadeUp 0.4s ease; }
+.submit-wrap.show { display: block; }
+.submit-note {
+  background: #fdf0f0;
+  border: 1px solid #f0c8c8;
+  border-radius: 8px;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.84rem;
+  color: #6b2323;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.btn-submit {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.95rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-submit:hover { background: var(--red-hover); }
+.btn-submit:disabled { background: var(--muted); cursor: not-allowed; }
+
+/* ── SUCCESS ── */
+.success-wrap { display: none; text-align: center; padding: 4rem 1.5rem; }
+.success-wrap.show { display: block; animation: fadeUp 0.5s ease; }
+.success-icon {
+  width: 56px; height: 56px;
+  background: var(--success-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.25rem;
+}
+.success-wrap h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--text); margin-bottom: 0.65rem; }
+.success-wrap p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; max-width: 400px; margin: 0 auto 1rem; }
+.mgr-name { font-family: 'Playfair Display', serif; font-style: italic; color: var(--red); }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--slate);
+  text-align: center;
+  padding: 2rem 2rem 1.75rem;
+}
+.footer-links { margin-bottom: 0.75rem; }
+.footer-links a {
+  color: #a0b4bd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.85rem;
+  margin: 0 0.6rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #fff; }
+.footer-disclaimer { font-size: 0.75rem; color: #6e8590; max-width: 680px; margin: 0 auto 0.5rem; line-height: 1.65; }
+.footer-copy { font-size: 0.75rem; color: #6e8590; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 0%,80%,100% { transform: scale(0.7); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 520px) {
+  .field-row { grid-template-columns: 1fr; }
+  .hero { padding: 2.5rem 1.25rem 2rem; }
+  .setup-card, .q-card { padding: 1.35rem 1.25rem; }
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
-  <div class="logo">The Real <span>1:1</span></div>
-  <div class="powered-by">Jen Coken · Executive Leadership Coach</div>
+  <div class="header-avatar">J</div>
+  <div class="header-text">
+    <div class="header-title">The Real 1:1</div>
+    <div class="header-sub">Jen Coken · Executive Leadership Coach</div>
+  </div>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Before Your Meeting</div>
-  <h1>Your manager wants to<br><em>actually</em> show up for you.</h1>
-  <p>Answer five honest questions. Your answers go to your manager 48 hours before your 1:1 — so the conversation that matters can actually happen.</p>
-</div>
+  <div class="hero-eyebrow">A Coaching Tool by Jen Coken</div>
+  <h1>
+    Show up for your people.
+    <span class="red-italic">And mean it.</span>
+  </h1>
+  <p class="hero-sub">Your employee answers five honest questions before every 1:1. You get coached on what they said — so the conversation that actually matters can happen.</p>
 
-<div class="progress-wrap">
-  <div class="progress-inner">
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-    </div>
-    <div class="progress-label" id="progressLabel">0 of 5 answered</div>
+  <!-- EXAMPLE CARD -->
+  <div class="example-card">
+    <div class="example-label">Here's what your employee will walk away with</div>
+    <div class="example-category">Manager · Preparing for the real conversation</div>
+    <div class="example-quote">"I've been struggling to keep up since we lost someone on the team. I've tried time blocking and saying no to more meetings — it helps a little, but I'm still drowning. What I really need is a decision on whether we're backfilling that role or not. Not knowing is making it impossible to plan."</div>
+    <div class="example-note">Your employee's answers are built from their real situation — in their own words.</div>
   </div>
 </div>
 
-<main class="main" id="mainForm">
+<!-- PROGRESS BAR (shown once form starts) -->
+<div class="progress-wrap" id="progressWrap">
+  <div class="progress-inner">
+    <div class="progress-bar"><div class="progress-fill" id="pFill"></div></div>
+    <div class="progress-label" id="pLabel">0 of 5 answered</div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-wrap" id="mainForm" style="display:none;">
 
   <!-- SETUP -->
-  <div class="setup-card">
+  <div class="setup-card show" id="setupCard">
     <h2>Before you begin</h2>
-    <p>This takes about 10 minutes. Your answers will be sent directly to your manager before your next 1:1. Be honest — this is the conversation.</p>
+    <p class="sub">Takes about 10 minutes. Your answers go directly to your manager before your next 1:1. Be honest — this is the conversation.</p>
     <div class="field-row">
       <div class="field">
         <label for="empName">Your first name</label>
         <input type="text" id="empName" placeholder="e.g. Jordan">
-        <div class="error-msg" id="empNameErr">Please enter your name.</div>
+        <div class="err-msg" id="empNameErr">Please enter your name.</div>
       </div>
       <div class="field">
         <label for="empEmail">Your email</label>
         <input type="email" id="empEmail" placeholder="you@company.com">
-        <div class="error-msg" id="empEmailErr">Please enter a valid email.</div>
+        <div class="err-msg" id="empEmailErr">Please enter a valid email.</div>
       </div>
     </div>
-    <div class="field-row" style="margin-top:1rem;">
+    <div class="field-row" style="margin-top:0.9rem;">
       <div class="field">
         <label for="mgrName">Your manager's name</label>
         <input type="text" id="mgrName" placeholder="e.g. Doris">
-        <div class="error-msg" id="mgrNameErr">Please enter your manager's name.</div>
+        <div class="err-msg" id="mgrNameErr">Please enter your manager's name.</div>
       </div>
       <div class="field">
         <label for="mgrEmail">Your manager's email</label>
         <input type="email" id="mgrEmail" placeholder="manager@company.com">
-        <div class="error-msg" id="mgrEmailErr">Please enter your manager's email.</div>
+        <div class="err-msg" id="mgrEmailErr">Please enter a valid email.</div>
       </div>
     </div>
   </div>
 
   <!-- Q1 -->
-  <div class="question-card visible" id="card1">
-    <div class="q-header">
-      <div class="q-number" id="num1">1</div>
-      <div class="q-text">What's going well?</div>
-    </div>
-    <div class="q-hint">Share wins, momentum, things that feel solid right now — work, relationships, projects.</div>
-    <textarea id="q1" placeholder="I've been making real progress on..." oninput="handleInput(1)"></textarea>
-    <div class="char-count" id="cc1">0 characters</div>
-    <div class="ai-response" id="ai1"><div class="ai-label">Reflection prompt</div><div id="ai1text"></div></div>
-    <div class="check-mark" id="check1">✓ Answer saved</div>
-    <button class="btn-next" id="next1" onclick="handleNext(1)">Save & continue →</button>
+  <div class="q-card show" id="card1">
+    <div class="q-top"><div class="q-num" id="num1">1</div><div class="q-label">What's going well?</div></div>
+    <div class="q-hint">Share wins, momentum, things that feel solid — work, relationships, projects.</div>
+    <textarea id="q1" placeholder="I've been making real progress on..."></textarea>
+    <div class="q-footer"><div class="char-ct" id="cc1">0 characters</div><button class="btn-next" id="btn1">Save &amp; continue →</button></div>
+    <div class="ai-box" id="ai1"><div class="ai-tag">Reflection prompt</div><div id="ai1txt"></div></div>
+    <div class="saved-note">✓ Answer saved</div>
   </div>
 
   <!-- Q2 -->
-  <div class="question-card" id="card2">
-    <div class="q-header">
-      <div class="q-number" id="num2">2</div>
-      <div class="q-text">What isn't going as well as you would like it to?</div>
-    </div>
+  <div class="q-card" id="card2">
+    <div class="q-top"><div class="q-num" id="num2">2</div><div class="q-label">What isn't going as well as you would like it to?</div></div>
     <div class="q-hint">Be specific. This is the most important thing your manager needs to hear.</div>
-    <textarea id="q2" placeholder="I've been struggling with..." oninput="handleInput(2)"></textarea>
-    <div class="char-count" id="cc2">0 characters</div>
-    <div class="ai-response" id="ai2"><div class="ai-label">Reflection prompt</div><div id="ai2text"></div></div>
-    <div class="check-mark" id="check2">✓ Answer saved</div>
-    <button class="btn-next" id="next2" onclick="handleNext(2)">Save & continue →</button>
+    <textarea id="q2" placeholder="I've been struggling with..."></textarea>
+    <div class="q-footer"><div class="char-ct" id="cc2">0 characters</div><button class="btn-next" id="btn2">Save &amp; continue →</button></div>
+    <div class="ai-box" id="ai2"><div class="ai-tag">Reflection prompt</div><div id="ai2txt"></div></div>
+    <div class="saved-note">✓ Answer saved</div>
   </div>
 
   <!-- Q3 -->
-  <div class="question-card" id="card3">
-    <div class="q-header">
-      <div class="q-number" id="num3">3</div>
-      <div class="q-text">What have you done to try to solve it?</div>
-    </div>
+  <div class="q-card" id="card3">
+    <div class="q-top"><div class="q-num" id="num3">3</div><div class="q-label">What have you done to try to solve it?</div></div>
     <div class="q-hint">Before asking for help, show your own thinking. What have you already tried?</div>
-    <textarea id="q3" placeholder="I've already tried..." oninput="handleInput(3)"></textarea>
-    <div class="char-count" id="cc3">0 characters</div>
-    <div class="ai-response" id="ai3"><div class="ai-label">Reflection prompt</div><div id="ai3text"></div></div>
-    <div class="check-mark" id="check3">✓ Answer saved</div>
-    <button class="btn-next" id="next3" onclick="handleNext(3)">Save & continue →</button>
+    <textarea id="q3" placeholder="I've already tried..."></textarea>
+    <div class="q-footer"><div class="char-ct" id="cc3">0 characters</div><button class="btn-next" id="btn3">Save &amp; continue →</button></div>
+    <div class="ai-box" id="ai3"><div class="ai-tag">Reflection prompt</div><div id="ai3txt"></div></div>
+    <div class="saved-note">✓ Answer saved</div>
   </div>
 
   <!-- Q4 -->
-  <div class="question-card" id="card4">
-    <div class="q-header">
-      <div class="q-number" id="num4">4</div>
-      <div class="q-text">What do you need from me to get your job done?</div>
-    </div>
+  <div class="q-card" id="card4">
+    <div class="q-top"><div class="q-num" id="num4">4</div><div class="q-label">What do you need from me to get your job done?</div></div>
     <div class="q-hint">A resource, a decision, a connection, air cover — be direct about what would actually help.</div>
-    <textarea id="q4" placeholder="It would really help if..." oninput="handleInput(4)"></textarea>
-    <div class="char-count" id="cc4">0 characters</div>
-    <div class="ai-response" id="ai4"><div class="ai-label">Reflection prompt</div><div id="ai4text"></div></div>
-    <div class="check-mark" id="check4">✓ Answer saved</div>
-    <button class="btn-next" id="next4" onclick="handleNext(4)">Save & continue →</button>
+    <textarea id="q4" placeholder="It would really help if..."></textarea>
+    <div class="q-footer"><div class="char-ct" id="cc4">0 characters</div><button class="btn-next" id="btn4">Save &amp; continue →</button></div>
+    <div class="ai-box" id="ai4"><div class="ai-tag">Reflection prompt</div><div id="ai4txt"></div></div>
+    <div class="saved-note">✓ Answer saved</div>
   </div>
 
   <!-- Q5 -->
-  <div class="question-card" id="card5">
-    <div class="q-header">
-      <div class="q-number" id="num5">5</div>
-      <div class="q-text">Do you have any questions for me?</div>
-    </div>
+  <div class="q-card" id="card5">
+    <div class="q-top"><div class="q-num" id="num5">5</div><div class="q-label">Do you have any questions for me?</div></div>
     <div class="q-hint">What do you genuinely want to know — about direction, decisions, your own growth?</div>
-    <textarea id="q5" placeholder="I've been wondering about..." oninput="handleInput(5)"></textarea>
-    <div class="char-count" id="cc5">0 characters</div>
-    <div class="ai-response" id="ai5"><div class="ai-label">Reflection prompt</div><div id="ai5text"></div></div>
-    <div class="check-mark" id="check5">✓ Answer saved</div>
-    <button class="btn-next" id="next5" onclick="handleNext(5)">Save answer →</button>
+    <textarea id="q5" placeholder="I've been wondering about..."></textarea>
+    <div class="q-footer"><div class="char-ct" id="cc5">0 characters</div><button class="btn-next" id="btn5">Save answer →</button></div>
+    <div class="ai-box" id="ai5"><div class="ai-tag">Reflection prompt</div><div id="ai5txt"></div></div>
+    <div class="saved-note">✓ Answer saved</div>
   </div>
 
   <!-- SUBMIT -->
-  <div class="submit-section" id="submitSection">
-    <div class="submit-note">
-      <strong>Ready to send?</strong> Your answers will go directly to your manager so they can prepare. This is your voice in the room before you even get there.
-    </div>
-    <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">Send to my manager →</button>
+  <div class="submit-wrap" id="submitWrap">
+    <div class="submit-note"><strong>Ready to send?</strong> Your answers go directly to your manager so they can prepare. This is your voice in the room before you even get there.</div>
+    <button class="btn-submit" id="btnSubmit" onclick="doSubmit()">Send to my manager →</button>
   </div>
 
-</main>
+</div><!-- /form-wrap -->
 
 <!-- SUCCESS -->
-<div class="success-screen" id="successScreen">
+<div class="success-wrap" id="successWrap">
   <div class="success-icon">✓</div>
   <h2>Your answers are on their way.</h2>
-  <p>
-    <span class="success-manager-name" id="successMgrName">Your manager</span> will receive your answers and be prompted to prepare before your 1:1. You've done something most employees never do — you showed up before the meeting even started.
-  </p>
-  <p style="font-size:0.82rem; color: var(--muted);">A copy has been sent to your email as well.</p>
+  <p><span class="mgr-name" id="mgrNameOut">Your manager</span> will receive your answers and be prompted to prepare before your 1:1. You showed up before the meeting even started.</p>
+  <p style="font-size:0.8rem;color:var(--muted);">A copy has been sent to your email as well.</p>
 </div>
 
+<!-- LANDING BUTTONS (shown on homepage) -->
+<div id="landingButtons" style="text-align:center; padding: 0 1.5rem 5rem;">
+  <p style="font-size:0.9rem; color:var(--text-mid); margin-bottom:1.5rem;">Ready to prepare for your next 1:1?</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; max-width:520px; margin:0 auto;">
+    <button onclick="startForm()" style="background:var(--red); color:#fff; border:none; border-radius:8px; padding:0.9rem 2rem; font-family:'DM Sans',sans-serif; font-size:0.97rem; font-weight:500; cursor:pointer; flex:1; min-width:200px; transition:background 0.2s;">
+      Get started →
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-links">
     <a href="https://jencoken.co/privacy-policy-coken" target="_blank">Privacy Policy</a>
     <a href="https://jencoken.co/terms-of-service" target="_blank">Terms of Service</a>
     <a href="https://jencoken.com" target="_blank">jencoken.com</a>
   </div>
-  <div class="footer-disclaimer">
-    The Real 1:1 is an AI-powered tool. Coaching responses are generated by artificial intelligence and are not a substitute for professional coaching, legal, or financial advice. Results are not guaranteed.
-  </div>
+  <div class="footer-disclaimer">The Real 1:1 is an AI-powered tool. Coaching responses are generated by artificial intelligence and are not a substitute for professional coaching, legal, or financial advice. Results are not guaranteed.</div>
   <div class="footer-copy">© 2026 Embrace the Ridiculousness of Life LLC. All rights reserved. The 5-question 1:1 framework is the intellectual property of Jen Coken.</div>
 </footer>
 
 <script>
-  const ANTHROPIC_API_URL = "/.netlify/functions/coach";
+const API = '/.netlify/functions/coach';
+const PROMPTS = [
+  "That's a real answer. Can you point to one specific moment in the last two weeks that made you feel this way? Concrete details will help your manager understand what's actually working.",
+  "That took honesty. Before your 1:1, ask yourself: is there anything underneath this that's harder to say out loud? The more specific you are, the more your manager can actually help.",
+  "Good — you're not showing up empty-handed. Lead with what you tried before you ask for what you need. It changes the whole dynamic.",
+  "This is the ask most employees never make directly. You just did. Your manager will be better prepared to help because you named it clearly.",
+  "Questions show you're thinking beyond your to-do list. Come in expecting a real answer — not a deflection."
+];
+const Qs = [
+  "What's going well?",
+  "What isn't going as well as you would like it to?",
+  "What have you done to try to solve it?",
+  "What do you need from me to get your job done?",
+  "Do you have any questions for me?"
+];
 
-  const questions = [
-    { id: 1, q: "What's going well?", hint: "wins, momentum, things feeling solid" },
-    { id: 2, q: "What isn't going as well as you would like it to?", hint: "be specific and honest" },
-    { id: 3, q: "What have you done to try to solve it?", hint: "your own attempts so far" },
-    { id: 4, q: "What do you need from me to get your job done?", hint: "specific support requested" },
-    { id: 5, q: "Do you have any questions for me?", hint: "genuine curiosity" }
-  ];
+let done = [false,false,false,false,false];
+let aiShown = [false,false,false,false,false];
 
-  const reflectionPrompts = [
-    "That's a real answer. Is there a specific moment or project in the last two weeks that made you feel that? Being concrete will help your manager understand what's actually working.",
-    "That took honesty. Before your 1:1, ask yourself: is there anything underneath this that's harder to say out loud? The more specific you can be in the room, the more your manager can actually help.",
-    "Good — you're not showing up empty-handed. When you share this in your 1:1, lead with what you tried before asking for what you need. It changes the whole dynamic.",
-    "This is the ask that most employees never make directly. You just did. Your manager will be better prepared to help because you named it clearly.",
-    "Questions are a sign you're thinking about more than just your to-do list. Come into your 1:1 expecting a real answer — not a deflection."
-  ];
+function startForm() {
+  document.getElementById('landingButtons').style.display = 'none';
+  document.getElementById('mainForm').style.display = 'block';
+  document.getElementById('progressWrap').classList.add('show');
+  document.getElementById('mainForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-  let answered = new Array(6).fill(false);
-  let aiShown = new Array(6).fill(false);
-
-  function handleInput(n) {
-    const ta = document.getElementById('q' + n);
-    const cc = document.getElementById('cc' + n);
-    const nextBtn = document.getElementById('next' + n);
-    cc.textContent = ta.value.length + ' characters';
-    const card = document.getElementById('card' + n);
-    card.classList.add('active');
-    if (ta.value.trim().length >= 10) {
-      nextBtn.style.display = 'inline-block';
-    } else {
-      nextBtn.style.display = 'none';
-    }
-  }
-
-  function handleNext(n) {
-    const ta = document.getElementById('q' + n);
-    if (ta.value.trim().length < 10) return;
-    markAnswered(n);
-    if (!aiShown[n]) {
-      showAIResponse(n);
-      aiShown[n] = true;
-    }
-    const nextBtn = document.getElementById('next' + n);
-    if (nextBtn) nextBtn.style.display = 'none';
-    if (n < 5) {
-      const nextCard = document.getElementById('card' + (n + 1));
-      setTimeout(() => {
-        nextCard.classList.add('visible');
-        nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 300);
-    }
-  }
-
-  function markAnswered(n) {
-    if (answered[n]) return;
-    answered[n] = true;
-    const card = document.getElementById('card' + n);
-    card.classList.remove('active');
-    card.classList.add('completed');
-    updateProgress();
-    checkAllAnswered();
-  }
-
-  function showAIResponse(n) {
-    const box = document.getElementById('ai' + n);
-    const text = document.getElementById('ai' + n + 'text');
-    box.classList.add('visible');
-    text.innerHTML = '<div class="ai-thinking"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
-    setTimeout(() => {
-      const ta = document.getElementById('q' + n);
-      getAIReflection(n, ta.value, text);
-    }, 1200);
-  }
-
-  async function getAIReflection(n, answer, targetEl) {
-    const useDemo = false;
-    if (useDemo) {
-      typeText(targetEl, reflectionPrompts[n - 1]);
-      return;
-    }
-    try {
-      const res = await fetch(ANTHROPIC_API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          question: questions[n - 1].q,
-          answer: answer,
-          questionNumber: n
-        })
-      });
-      const data = await res.json();
-      typeText(targetEl, data.reflection || reflectionPrompts[n - 1]);
-    } catch (e) {
-      typeText(targetEl, reflectionPrompts[n - 1]);
-    }
-  }
-
-  function typeText(el, text) {
-    el.textContent = '';
-    let i = 0;
-    const interval = setInterval(() => {
-      el.textContent += text[i];
-      i++;
-      if (i >= text.length) clearInterval(interval);
-    }, 18);
-  }
-
-  function updateProgress() {
-    const count = answered.slice(1).filter(Boolean).length;
-    const pct = (count / 5) * 100;
-    document.getElementById('progressFill').style.width = pct + '%';
-    document.getElementById('progressLabel').textContent = count + ' of 5 answered';
-  }
-
-  function checkAllAnswered() {
-    const count = answered.slice(1).filter(Boolean).length;
-    if (count === 5) {
-      const submitSection = document.getElementById('submitSection');
-      submitSection.classList.add('visible');
-      setTimeout(() => submitSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 300);
-    }
-  }
-
-  function validateSetup() {
-    let valid = true;
-    const fields = [
-      { id: 'empName', errId: 'empNameErr', check: v => v.trim().length > 0 },
-      { id: 'empEmail', errId: 'empEmailErr', check: v => /\S+@\S+\.\S+/.test(v) },
-      { id: 'mgrName', errId: 'mgrNameErr', check: v => v.trim().length > 0 },
-      { id: 'mgrEmail', errId: 'mgrEmailErr', check: v => /\S+@\S+\.\S+/.test(v) }
-    ];
-    fields.forEach(f => {
-      const el = document.getElementById(f.id);
-      const err = document.getElementById(f.errId);
-      if (!f.check(el.value)) {
-        el.classList.add('error');
-        err.classList.add('visible');
-        valid = false;
+// Wire textareas
+for (var i = 1; i <= 5; i++) {
+  (function(n) {
+    var ta = document.getElementById('q' + n);
+    var btn = document.getElementById('btn' + n);
+    var cc = document.getElementById('cc' + n);
+    var card = document.getElementById('card' + n);
+    ta.addEventListener('input', function() {
+      var len = ta.value.length;
+      cc.textContent = len + ' character' + (len === 1 ? '' : 's');
+      card.classList.add('active');
+      if (ta.value.trim().length >= 15) {
+        btn.classList.add('ready');
       } else {
-        el.classList.remove('error');
-        err.classList.remove('visible');
+        btn.classList.remove('ready');
       }
     });
-    return valid;
+    btn.addEventListener('click', function() {
+      if (ta.value.trim().length < 15) return;
+      saveQ(n);
+    });
+  })(i);
+}
+
+function saveQ(n) {
+  if (done[n-1]) return;
+  done[n-1] = true;
+  var card = document.getElementById('card' + n);
+  card.classList.remove('active');
+  card.classList.add('done');
+  if (!aiShown[n-1]) {
+    aiShown[n-1] = true;
+    showAI(n);
   }
-
-  function handleSubmit() {
-    if (!validateSetup()) {
-      document.querySelector('.setup-card').scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    const payload = {
-      employee: {
-        name: document.getElementById('empName').value,
-        email: document.getElementById('empEmail').value
-      },
-      manager: {
-        name: document.getElementById('mgrName').value,
-        email: document.getElementById('mgrEmail').value
-      },
-      answers: questions.map((q, i) => ({
-        question: q.q,
-        answer: document.getElementById('q' + (i + 1)).value
-      }))
-    };
-
-    console.log('Payload ready:', payload);
-
-    setTimeout(() => {
-      document.getElementById('mainForm').style.display = 'none';
-      const mgrName = document.getElementById('mgrName').value;
-      document.getElementById('successMgrName').textContent = mgrName;
-      document.getElementById('successScreen').classList.add('visible');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1800);
+  updateProgress();
+  if (n < 5) {
+    var next = document.getElementById('card' + (n+1));
+    setTimeout(function() {
+      next.classList.add('show');
+      next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
+  } else {
+    setTimeout(function() {
+      var sw = document.getElementById('submitWrap');
+      sw.classList.add('show');
+      sw.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 400);
   }
+}
+
+function showAI(n) {
+  var box = document.getElementById('ai' + n);
+  var txt = document.getElementById('ai' + n + 'txt');
+  box.classList.add('show');
+  txt.innerHTML = '<div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
+  setTimeout(function() {
+    getReflection(n, document.getElementById('q' + n).value, txt);
+  }, 1000);
+}
+
+async function getReflection(n, answer, el) {
+  try {
+    var res = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: Qs[n-1], answer: answer, questionNumber: n })
+    });
+    var data = await res.json();
+    typeOut(el, data.reflection || PROMPTS[n-1]);
+  } catch(e) {
+    typeOut(el, PROMPTS[n-1]);
+  }
+}
+
+function typeOut(el, text) {
+  el.textContent = '';
+  var i = 0;
+  var t = setInterval(function() {
+    el.textContent += text[i]; i++;
+    if (i >= text.length) clearInterval(t);
+  }, 16);
+}
+
+function updateProgress() {
+  var count = done.filter(Boolean).length;
+  document.getElementById('pFill').style.width = (count / 5 * 100) + '%';
+  document.getElementById('pLabel').textContent = count + ' of 5 answered';
+}
+
+function doSubmit() {
+  var fields = [
+    { id: 'empName',  errId: 'empNameErr',  ok: function(v){ return v.trim().length > 0; } },
+    { id: 'empEmail', errId: 'empEmailErr', ok: function(v){ return /\S+@\S+\.\S+/.test(v); } },
+    { id: 'mgrName',  errId: 'mgrNameErr',  ok: function(v){ return v.trim().length > 0; } },
+    { id: 'mgrEmail', errId: 'mgrEmailErr', ok: function(v){ return /\S+@\S+\.\S+/.test(v); } }
+  ];
+  var valid = true;
+  fields.forEach(function(f) {
+    var el = document.getElementById(f.id);
+    var err = document.getElementById(f.errId);
+    if (!f.ok(el.value)) { el.classList.add('err'); err.classList.add('show'); valid = false; }
+    else { el.classList.remove('err'); err.classList.remove('show'); }
+  });
+  if (!valid) { document.getElementById('setupCard').scrollIntoView({ behavior: 'smooth' }); return; }
+  var btn = document.getElementById('btnSubmit');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  setTimeout(function() {
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('progressWrap').classList.remove('show');
+    document.getElementById('mgrNameOut').textContent = document.getElementById('mgrName').value;
+    document.getElementById('successWrap').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 1600);
+}
 </script>
 </body>
 </html>
