@@ -661,7 +661,7 @@
 
   async function getAIReflection(n, answer, targetEl) {
     // Demo mode: use static prompts. In production, calls Netlify function.
-    const useDemo = true;
+    const useDemo = false;
 
     if (useDemo) {
       typeText(targetEl, reflectionPrompts[n-1]);
